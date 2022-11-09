@@ -1,0 +1,30 @@
+.Favavourites__flexcontainer{
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width:90vw;
+    margin: auto;
+    
+    
+    .poem__Box{
+        flex-basis:400px;
+        flex-flow: row;
+    }
+    .remove__text{
+        display: flex;
+        justify-content: right;
+        cursor: pointer;
+        position: relative;
+        top: 15px;
+        left: 0;
+
+    }
+    .removefavourite__icon{
+        position: absolute;
+        top:-16px;
+        left:130px;
+    }
+}
+   
+   

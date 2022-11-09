@@ -1,0 +1,13 @@
+.profile__container{
+   text-align: center;
+
+   .profile__img{
+    width: 90px;
+    height:90px;
+    border-radius: 50%;
+    object-fit: cover;
+    }
+    .profile__picInput{
+        visibility: hidden;
+    }
+}

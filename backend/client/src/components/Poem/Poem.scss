@@ -1,0 +1,49 @@
+.poem__Box{
+    background-color:black;
+    color:rgba(255, 255, 255, 0.877);
+    display:flex;
+    border-radius:5px;
+    width:400px;
+    margin:7px 0px 7px 0px;
+    border:1px solid rgba(255, 255, 255, 0.877);
+   
+  .poem__image{
+    object-fit: cover;
+    width: 44%;
+    border-radius: 5px;
+    
+    }
+    .contents{
+        padding:16px 10px 10px 10px; 
+        margin: 0;
+        position: relative;
+    }
+    .Poem__btn{
+        border: 1px solid;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: white;
+        cursor: pointer;
+        margin-left:11px;
+    }
+
+    .poem__deleteIcon,.poem__updateIcon{
+        width:30px;
+        position: absolute;
+        right: -1px;
+        top: 4px;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 50%;
+        margin:5px 5px 10px 1px;
+    }
+    .poem__updateIcon{
+        width:22px;
+        left: 121px;
+        top: 8px;
+        cursor: pointer;
+    }
+
+}
+
+

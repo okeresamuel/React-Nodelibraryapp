@@ -1,0 +1,12 @@
+ .poem__flexcontainer {
+  padding:15px 0px 0px 0px;
+
+ .userpoems__Showpage,.userpoems__Dashboard{
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 95vw;
+  margin: auto;
+ }
+}
