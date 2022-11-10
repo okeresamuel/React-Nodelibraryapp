@@ -1,5 +1,5 @@
 import Button from "../Button/Button"
-import { useEffect,useState} from "react"
+import { useEffect,useState, useRef} from "react"
 import {useDispatch, useSelector} from "react-redux"
 import {useNavigate} from "react-router-dom"
 import {Logout} from "../../features/Authaction"
@@ -10,48 +10,16 @@ import {Link} from "react-router-dom"
 import Profilepic from "../Profilepic/Profilepic"
 
 
- 
-  
 
-function Sidebaricon() {
-
-  // sidebarIcon
-  // menu icon animation
-  const [toggle__Nav, settoggleNav] = useState(false)
- 
- 
-   function open__Close(){
-    if(toggle__Nav){
-      const side__Bar = document.querySelector(".side__Bar") 
-      side__Bar.classList.remove("offset")
-      settoggleNav(false)
-    }else{
-      const side__Bar = document.querySelector(".side__Bar") 
-      side__Bar.classList.add("offset")
-      settoggleNav(true)
-    } 
-  }
-    
-  return (
-   <div className="outer__Container">
-   <div id="menu__Container" onClick={(()=>{ open__Close()})}>
-      <div className="inner__Iconcontainer">
-      <span className="line__One"></span>
-      <span className="line__Two"></span>
-      <span className="line__Three"></span>
-     </div>
-  </div>
-  </div>
-    )
-  }
   
   
+// app sidebar
 function Sidebar() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const {user} = useSelector(state => state.auth)
   const {favourite,} =  useSelector( state => state.Fav)
-  
+
   // Logout the user
    const Logoutuser = () =>{
    dispatch(Logout())
@@ -69,9 +37,10 @@ function Sidebar() {
      }else{
       navigate("/login")
      }
-  }, [])
+}, [])
+  
 
-
+// hide and show logout btn if user is present
 function DisplayLogoutbtn({ user, }) {
   if (user) {
    return <>
@@ -91,8 +60,23 @@ function DisplayLogoutbtn({ user, }) {
 
 }
 
+
+const [toggle__Nav,    settoggleNav] = useState(true)
+const side__Barref = useRef()
 return (
-    <div className="side__Bar offset" >
+  <>
+  <div className="outer__Container">
+  <div id="menu__Container" onClick={(()=>{settoggleNav(!toggle__Nav)})}>
+     <div className="inner__Iconcontainer">
+     <span className="line__One"></span>
+     <span className="line__Two"></span>
+     <span className="line__Three"></span>
+     </div>
+ </div>
+ </div>
+
+    {toggle__Nav && 
+    <div className="side__Bar" ref={side__Barref}>
     {/* profilepic */}
      <Profilepic />
     <div className="nav__Seconddiv">
@@ -123,6 +107,8 @@ return (
    </div>
    </div>
    </div>
+  }
+   </>
   )
 }
-export  { Sidebaricon, Sidebar }
+export  { Sidebar }

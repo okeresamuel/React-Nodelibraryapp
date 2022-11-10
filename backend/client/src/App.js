@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer,} from "react-toastify"
 import {useState} from "react"
 import {BrowserRouter as Router, Routes, Route,} from "react-router-dom" 
-import {Sidebaricon} from "./components/Sidebar/sidebar"
 import {Sidebar} from './components/Sidebar/sidebar';
 import {Dashboard, Errorpage, Favourites, Login, Register, Showpage, Write, ReadingPage} from "./pages/exporter"
 
@@ -13,8 +12,6 @@ function App() {
    
   //Reading info
   const [Reading, setReading] = useState("")
-
-   
    const [update, setUpdatetext] = useState("")
    const [form, setformFields] = useState({
     title: "",
@@ -26,7 +23,6 @@ function App() {
     <>
     <Router>
     <Sidebar/>
-    <Sidebaricon />
     <Routes>
       <>
       <Route path="/"  element={<Showpage setformFields={setformFields} setUpdatetext={setUpdatetext} setReading={setReading} /> }/>

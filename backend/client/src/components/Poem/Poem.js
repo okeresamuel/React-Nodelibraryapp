@@ -8,6 +8,8 @@ import Exiticon from "../../components/assets/images/exitIcon.png"
 import Updateicon from "../../components/assets/images/updateImage.png"
 import Loader from "../Loader/LoaderTwo/LoaderTwo"
 import {toast} from "react-toastify"
+import Input from "../Input/Input"
+import { useState } from "react"
 
 
 function Poem({setformFields,  setUpdatetext, setReading}) {
@@ -45,14 +47,24 @@ function Poem({setformFields,  setUpdatetext, setReading}) {
   }
  
 
+  const [inputText, setinputText ] = useState("")
   return (
     <>
-      {/* display all poems */}
+      {/* display all poems with its search filter functionality*/}
+
+      <Input className="searchInput" type="search" placeholder="Filter By Title" onChange={((e)=>{setinputText(e.target.value)})}/>
+      
       <div className="userpoems__Dashboard">
       {poems && poems.length > 0 ? (
       <div className="userpoems__Dashboard">
   
-      {poems?.map((poems)=> (
+      {poems?.filter((poems)=>{
+      if(inputText === ""){
+       return poems
+      }else if(poems.title.toLowerCase().includes(inputText.toLowerCase())){
+       return poems
+      }
+      }).map((poems)=> (
       <div className="poem__Box">
       <img className="poem__image" src={poems.image} alt="poemImage"/>
       <div className="contents"> 
