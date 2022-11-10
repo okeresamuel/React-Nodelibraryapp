@@ -3,7 +3,8 @@ This is a react and nodejs app to post Novels Story or even poems. I also used t
 worked with redux for state management and mongodb for the database . 
 
 # Project Image
-![Screenshot (97)](https://user-images.githubusercontent.com/104143398/200947441-1591db91-a95a-47af-825b-98d538bb60f3.png)
+![Screenshot (102)](https://user-images.githubusercontent.com/104143398/201195742-b9b7ffdd-a02e-41b1-ad76-311b21ecd692.png)
+
 
 # view project
 https://dapper-puffpuff-5208a1.netlify.app
