@@ -7,4 +7,4 @@ worked with redux for state management and mongodb for the database .
 
 
 # view project
-https://sensational-otter-59da97.netlify.app
+https://storylibraryapp.netlify.app
