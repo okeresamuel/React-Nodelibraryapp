@@ -4,7 +4,7 @@ import axios  from "axios"
 //  Register The user in database
 export const Registeruser = createAsyncThunk("Registeruser", async (userInfo, {rejectWithValue})=>{
  try {
-  const {data} =  await axios.post("https://storypoemapp.herokuapp.com/api/register", userInfo )
+  const {data} =  await axios.post("https://backend-reactnodelibrary.onrender.com/api/register", userInfo )
   localStorage.setItem("user", JSON.stringify(data))
   return data 
 } catch (error) {
@@ -16,7 +16,7 @@ export const Registeruser = createAsyncThunk("Registeruser", async (userInfo, {r
 // Login user in database
  export const Loginuser = createAsyncThunk("logoutuser", async (userInfo, {rejectWithValue})=>{
  try {
-    const {data} =  await axios.post("https://storypoemapp.herokuapp.com/api/login", userInfo ) 
+    const {data} =  await axios.post("https://backend-reactnodelibrary.onrender.com/api/login", userInfo ) 
     localStorage.setItem("user", JSON.stringify(data))
     return data  
   } catch (error) {

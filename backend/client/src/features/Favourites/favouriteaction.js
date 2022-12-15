@@ -11,7 +11,7 @@ import axios  from "axios"
        }
      }
        try {
-       const {data} = await axios.post(`https://storypoemapp.herokuapp.com/api/poems/favourite`, info, config) 
+       const {data} = await axios.post(`https://backend-reactnodelibrary.onrender.com/api/poems/favourite`, info, config) 
        return data
      } catch (error) {
        return rejectWithValue (error.response.data)
@@ -28,7 +28,7 @@ import axios  from "axios"
        }
      }
        try {
-        const {data} = await axios.get(`https://storypoemapp.herokuapp.com/api/poems/favourite`, config) 
+        const {data} = await axios.get(`https://backend-reactnodelibrary.onrender.com/api/poems/favourite`, config) 
         return data
        } catch (error) {
          return rejectWithValue (error.response.data)
@@ -46,7 +46,7 @@ import axios  from "axios"
        }
      }
        try {
-        const {data} = await axios.delete(`https://storypoemapp.herokuapp.com/api/poems/favourite/${id}`, config) 
+        const {data} = await axios.delete(`https://backend-reactnodelibrary.onrender.com/api/poems/favourite/${id}`, config) 
         return data
        } catch (error) {
          return rejectWithValue (error.response.data)

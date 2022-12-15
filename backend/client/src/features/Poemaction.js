@@ -3,9 +3,9 @@ import axios from "axios"
 
 
    //  fetch all poems
-   export const get__allpoem = createAsyncThunk("get__poem", async ( _, {rejectWithValue}  )=>{  
+  export const get__allpoem = createAsyncThunk("get__poem", async ( _, {rejectWithValue}  )=>{  
     try {
-        const {data} = await axios.get("https://storypoemapp.herokuapp.com/api/poems/general",) 
+        const {data} = await axios.get("https://backend-reactnodelibrary.onrender.com/api/poems/general",) 
         return data 
      } catch (error) {
         return rejectWithValue(error.response.data)
@@ -23,7 +23,7 @@ const {rejectWithValue} = thunkApi
     }
   }
     try {
-     const {data} = await axios.get("https://storypoemapp.herokuapp.com/api/poems", config) 
+     const {data} = await axios.get("https://backend-reactnodelibrary.onrender.com/api/poems", config) 
      return data 
     } catch (error) {
      return  rejectWithValue(error)
@@ -41,7 +41,7 @@ export const post__Poem = createAsyncThunk("post__poem", async ( info, thunkApi,
      }
    }
      try {
-      const {data} = await axios.post("https://storypoemapp.herokuapp.com/api/poems", info, config) 
+      const {data} = await axios.post("https://backend-reactnodelibrary.onrender.com/api/poems", info, config) 
       return data 
      } catch (error) {
       return rejectWithValue (error.response.data)
@@ -60,7 +60,7 @@ export const post__Poem = createAsyncThunk("post__poem", async ( info, thunkApi,
          }
        }
          try {
-          const {data} = await axios.delete(`https://storypoemapp.herokuapp.com/api/poems/${id}`,config) 
+          const {data} = await axios.delete(`https://backend-reactnodelibrary.onrender.com/api/poems/${id}`,config) 
           return data 
          } catch (error) {
           return rejectWithValue (error.response.data)
@@ -82,7 +82,7 @@ export const post__Poem = createAsyncThunk("post__poem", async ( info, thunkApi,
         
         const {_id} = info
          try {
-          const {data} = await axios.patch(`https://storypoemapp.herokuapp.com/api/poems/${_id}`, info, config) 
+          const {data} = await axios.patch(`https://backend-reactnodelibrary.onrender.com/api/poems/${_id}`, info, config) 
           return data 
          } catch (error) {
           return rejectWithValue (error.response.data)
